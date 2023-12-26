@@ -1,4 +1,4 @@
-package com.cgvsu.render_engine;
+package com.cgvsu.render_scene;
 
 import java.util.ArrayList;
 
@@ -6,7 +6,7 @@ import com.cgvsu.math.Vector3f;
 import javafx.scene.canvas.GraphicsContext;
 import javax.vecmath.*;
 import com.cgvsu.model.Model;
-import static com.cgvsu.render_engine.GraphicConveyor.*;
+import static com.cgvsu.render_scene.GraphicConveyor.*;
 
 public class RenderEngine {
 

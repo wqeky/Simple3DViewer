@@ -7,7 +7,7 @@ package com.cgvsu;
 
 import com.cgvsu.model.Model;
 import com.cgvsu.objreader.ObjReader;
-import com.cgvsu.render_engine.Camera;
+import com.cgvsu.render_scene.Camera;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;

@@ -1,4 +1,4 @@
-package com.cgvsu.render_engine;
+package com.cgvsu.render_scene;
 import javax.vecmath.*;
 
 public class GraphicConveyor {

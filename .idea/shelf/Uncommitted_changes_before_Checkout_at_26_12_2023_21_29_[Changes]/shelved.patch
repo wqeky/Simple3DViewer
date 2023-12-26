@@ -1,0 +1,42 @@
+Index: src/main/java/com/cgvsu/render_scene/RenderEngine.java
+===================================================================
+diff --git a/src/main/java/com/cgvsu/render_scene/RenderEngine.java b/src/main/java/com/cgvsu/render_scene/RenderEngine.java
+--- a/src/main/java/com/cgvsu/render_scene/RenderEngine.java	
++++ b/src/main/java/com/cgvsu/render_scene/RenderEngine.java	
+@@ -6,7 +6,7 @@
+ import javafx.scene.canvas.GraphicsContext;
+ import javax.vecmath.*;
+ import com.cgvsu.model.Model;
+-import static com.cgvsu.render_scene.GraphicConveyor.*;
++import static com.cgvsu.render_scene.GraphicsProcessor.*;
+ 
+ public class RenderEngine {
+ 
+@@ -17,7 +17,7 @@
+             final int width,
+             final int height)
+     {
+-        Matrix4f modelMatrix = rotateScaleTranslate();
++        Matrix4f modelMatrix = createRotationScaleTranslationMatrix();
+         Matrix4f viewMatrix = camera.getViewMatrix();
+         Matrix4f projectionMatrix = camera.getProjectionMatrix();
+ 
+Index: src/main/java/com/cgvsu/render_scene/Camera.java
+===================================================================
+diff --git a/src/main/java/com/cgvsu/render_scene/Camera.java b/src/main/java/com/cgvsu/render_scene/Camera.java
+--- a/src/main/java/com/cgvsu/render_scene/Camera.java	
++++ b/src/main/java/com/cgvsu/render_scene/Camera.java	
+@@ -48,11 +48,11 @@
+     }
+ 
+     Matrix4f getViewMatrix() {
+-        return GraphicConveyor.lookAt(position, target);
++        return GraphicsProcessor.lookAt(position, target);
+     }
+ 
+     Matrix4f getProjectionMatrix() {
+-        return GraphicConveyor.perspective(fov, aspectRatio, nearPlane, farPlane);
++        return GraphicsProcessor.perspective(fov, aspectRatio, nearPlane, farPlane);
+     }
+ 
+     private Vector3f position;

@@ -2,8 +2,7 @@ package com.cgvsu.rasterization;
 
 import java.util.Objects;
 
-public class MyPoint2D { // класс одного из коллег проекта (по заданию)
-    //todo: сделать х и у float
+public class MyPoint2D {
     private double x;
     private double y;
 

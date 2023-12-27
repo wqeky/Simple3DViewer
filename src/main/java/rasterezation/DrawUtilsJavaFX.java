@@ -4,7 +4,7 @@ package com.cgvsu.rasterization;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.paint.Color;
 
-public class DrawUtilsJavaFX extends com.cgvsu.rasterization.GraphicsUtils<Canvas> { // класс одного из коллег проекта (по заданию)
+public class DrawUtilsJavaFX extends com.cgvsu.rasterization.GraphicsUtils<Canvas> {
     public DrawUtilsJavaFX(Canvas graphics) {
         super(graphics);
     }

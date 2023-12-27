@@ -2,7 +2,7 @@ package com.cgvsu.rasterization;
 
 import com.cgvsu.math.Vector2f;
 
-public class Baricentric { // класс одного из коллег проекта (по заданию)
+public class Baricentric {
     double u;
     double v;
     double w;

@@ -128,7 +128,7 @@ public class Scene {
             int selectedModelIndex = (Integer)var2.next();
             modelOnScene = (ModelOnScene)ModelsOnSceneList.get(selectedModelIndex);
             if (!modelOnScene.isSaveWithChanges()) {
-                modelOnScene = modelOnScene.subtract(modelOnScene.getTransition());
+                modelOnScene = modelOnScene.subtract(modelOnScene.getTranslation());
             }
         }
 

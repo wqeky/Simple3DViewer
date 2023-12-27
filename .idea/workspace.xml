@@ -4,26 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebbbc371-9c3e-484b-bf5c-a751008d4637" name="Changes" comment="master branch with math and some other features">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/model/ModelOnScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/model/ModelUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/rasterezation/Baricentric.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/rasterezation/DrawUtilsJavaFX.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/rasterezation/DrawUtilsSwing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/rasterezation/GraphicsUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/rasterezation/MyColor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/rasterezation/MyPoint2D.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/rasterezation/Rasterization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_12_2023_21_29__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_12_2023_21_29__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_12_2023_21_29__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_12_2023_21_29__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_12_2023_21_35__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_12_2023_21_35__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_12_2023_21_36__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_12_2023_21_36__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="ebbbc371-9c3e-484b-bf5c-a751008d4637" name="Changes" comment="1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/Scene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/model/ModelOnScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/model/ModelOnScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/model/ModelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/model/ModelUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/model/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/model/Polygon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rasterezation/Baricentric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rasterezation/Baricentric.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rasterezation/DrawUtilsJavaFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rasterezation/DrawUtilsJavaFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rasterezation/DrawUtilsSwing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rasterezation/DrawUtilsSwing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rasterezation/GraphicsUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rasterezation/GraphicsUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rasterezation/MyColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rasterezation/MyColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rasterezation/MyPoint2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rasterezation/MyPoint2D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rasterezation/Rasterization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rasterezation/Rasterization.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703616073049</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="1">
+      <created>1703679452250</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1703679452250</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -109,6 +110,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="3f, 2f add" />
     <MESSAGE value="master branch with math and some other features" />
-    <option name="LAST_COMMIT_MESSAGE" value="master branch with math and some other features" />
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
 </project>

@@ -7,7 +7,7 @@ import java.util.*;
 
 public class Model {
 
-    protected List<Vector3f> vertices;
+    public List<Vector3f> vertices;
     protected List<Vector2f> textureVertices;
     protected List<Vector3f> normals;
     public List<Polygon> polygons;

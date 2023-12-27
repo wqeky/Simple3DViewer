@@ -6,6 +6,8 @@
 package com.cgvsu;
 
 import com.cgvsu.model.Model;
+import com.cgvsu.model.ModelOnScene;
+import com.cgvsu.model.ModelUtils;
 import com.cgvsu.objreader.ObjReader;
 import com.cgvsu.render_scene.Camera;
 import java.io.File;

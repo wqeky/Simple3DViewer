@@ -155,21 +155,21 @@ public final class ModelOnScene extends Model {
 
     public void movePosition(final Vector3f transition) {
         for (Vector3f vector : this.vertices) {
-            vector.subtract(this.transition);
+            vector.subtract(this.translation);
         }
-        this.transition.add(transition);
+        this.translation.add(transition);
         for (Vector3f vector : this.vertices) {
-            vector.add(this.transition);
+            vector.add(this.translation);
         }
     }
 
     public void applyMovePosition(final Vector3f transition) {
         for (Vector3f vector : this.vertices) {
-            vector.subtract(this.transition);
+            vector.subtract(this.translation);
         }
-        this.transition = transition;
+        this.translation = transition;
         for (Vector3f vector : this.vertices) {
-            vector.add(this.transition);
+            vector.add(this.translation);
         }
     }
 

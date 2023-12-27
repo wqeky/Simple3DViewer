@@ -5,6 +5,10 @@ import com.cgvsu.math.Vector3f;
 import javafx.scene.paint.Color;
 import javafx.scene.image.Image;
 
+import java.util.List;
+
+import static com.cgvsu.model.Polygon.changePolygonsNumeration;
+
 public final class ModelOnScene extends Model {
     private Vector3f translation;
 
@@ -121,3 +125,69 @@ public final class ModelOnScene extends Model {
 
     public ModelOnScene add(Vector3f vector3f) {
         ModelOnScene modelOnScene = new ModelOnScene();
+
+        for (Vector3f vector : this.vertices) {
+            Vector3f vertex = new Vector3f(vector);
+            vertex.add(vector3f);
+            modelOnScene.addVertex(vertex);
+        }
+        modelOnScene.addTextureVertices(this.textureVertices);
+        modelOnScene.addNormals(this.normals);
+        modelOnScene.addPolygons(this.polygons);
+
+        return modelOnScene;
+    }
+
+    public ModelOnScene subtract(Vector3f vector3f) {
+        ModelOnScene modelOnScene = new ModelOnScene();
+
+        for (Vector3f vector : this.vertices) {
+            Vector3f vertex = new Vector3f(vector);
+            vertex.subtract(vector3f);
+            modelOnScene.addVertex(vertex);
+        }
+        modelOnScene.addTextureVertices(this.textureVertices);
+        modelOnScene.addNormals(this.normals);
+        modelOnScene.addPolygons(this.polygons);
+
+        return modelOnScene;
+    }
+
+    public void movePosition(final Vector3f transition) {
+        for (Vector3f vector : this.vertices) {
+            vector.subtract(this.transition);
+        }
+        this.transition.add(transition);
+        for (Vector3f vector : this.vertices) {
+            vector.add(this.transition);
+        }
+    }
+
+    public void applyMovePosition(final Vector3f transition) {
+        for (Vector3f vector : this.vertices) {
+            vector.subtract(this.transition);
+        }
+        this.transition = transition;
+        for (Vector3f vector : this.vertices) {
+            vector.add(this.transition);
+        }
+    }
+
+    public static ModelOnScene createMetaModel(final List<ModelOnScene> ModelList) {
+        ModelOnScene metaModelOnScene = new ModelOnScene();
+        int amountOfVertices = 0, amountOfTextureVertices = 0, amountOfNormals = 0;
+
+        for (ModelOnScene modelOnScene : ModelList) {
+            metaModelOnScene.addVertices(modelOnScene.vertices);
+            metaModelOnScene.addTextureVertices(modelOnScene.textureVertices);
+            metaModelOnScene.addNormals(modelOnScene.normals);
+            metaModelOnScene.addPolygons(changePolygonsNumeration(modelOnScene.polygons, amountOfVertices, amountOfTextureVertices, amountOfNormals));
+
+            amountOfVertices += modelOnScene.getVertices().size();
+            amountOfTextureVertices += modelOnScene.getTextureVertices().size();
+            amountOfNormals += modelOnScene.getNormals().size();
+        }
+
+        return metaModelOnScene;
+    }
+}

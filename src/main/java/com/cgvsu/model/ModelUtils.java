@@ -8,14 +8,13 @@ import java.util.ArrayList;
 import static com.cgvsu.math.VectorsAction.calculateCrossProduct;
 import static com.cgvsu.math.VectorsAction.createFromTwoPoints;
 
-public class ModelUtils { // класс преобразования модели (операций над моделью)
+public class ModelUtils {
 
     public static void recalculateNormals(Model model) {
         model.normals.clear();
         for (int i = 0; i < model.vertices.size(); i++) {
             model.normals.add(calculateNormalForVertexInModel(model, i));
-            //System.out.println(model.normals.get(i).x + " " + model.normals.get(i).y + " " + model.normals.get(i).z + "   "
-            //      + i + "/"+model.vertices.size());
+
         }
     }
 

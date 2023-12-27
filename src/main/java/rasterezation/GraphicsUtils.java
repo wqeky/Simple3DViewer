@@ -2,7 +2,7 @@ package com.cgvsu.rasterization;
 
 import java.awt.*;
 
-public abstract class GraphicsUtils<T> { // класс одного из коллег проекта (по заданию)
+public abstract class GraphicsUtils<T> {
     T graphics;
 
     public GraphicsUtils(T graphics) {

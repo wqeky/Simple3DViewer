@@ -5,8 +5,7 @@ import com.cgvsu.math.Vector3f;
 
 import java.util.*;
 
-public class Model { // класс модели (из файла)
-    // по заданию, надо заменить векторы на написанные собственноручно
+public class Model {
 
     protected List<Vector3f> vertices;
     protected List<Vector2f> textureVertices;

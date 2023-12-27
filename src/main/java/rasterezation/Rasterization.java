@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-public class Rasterization { // класс одного из коллег проекта (по заданию)
+public class Rasterization {
 
     public static void fillTriangle(
             final com.cgvsu.rasterization.GraphicsUtils gr,

@@ -2,7 +2,7 @@ package com.cgvsu.rasterization;
 
 import java.awt.*;
 
-public class DrawUtilsSwing extends com.cgvsu.rasterization.GraphicsUtils<Graphics> { // класс одного из коллег проекта (по заданию)
+public class DrawUtilsSwing extends com.cgvsu.rasterization.GraphicsUtils<Graphics> {
 
 
     public DrawUtilsSwing(Graphics graphics) {

@@ -1,6 +1,6 @@
 package com.cgvsu.rasterization;
 
-public class MyColor { // класс одного из коллег проекта (по заданию)
+public class MyColor {
 
 
     public static final MyColor RED = new MyColor(1, 0, 0);

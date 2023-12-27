@@ -2,10 +2,6 @@ package com.cgvsu.model;
 
 import com.cgvsu.math.Vector3f;
 
-import static com.cgvsu.model.Polygon.changePolygonsNumeration;
-
-import java.util.List;
-
 import javafx.scene.paint.Color;
 import javafx.scene.image.Image;
 

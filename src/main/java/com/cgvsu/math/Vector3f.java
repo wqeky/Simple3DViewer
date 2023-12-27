@@ -1,9 +1,9 @@
 package com.cgvsu.math;
 
 public class Vector3f {
-    protected float x;
-    protected float y;
-    protected float z;
+    public float x;
+    public float y;
+    public float z;
 
 
     public Vector3f(float x, float y, float z) {

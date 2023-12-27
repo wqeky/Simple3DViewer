@@ -119,7 +119,7 @@ public class Scene {
 
         return actualTextureName;
     }
-
+//Аня посмотри этот метод
     public static ModelOnScene mergeSelectedModelsOnScene(List<Integer> selectedModelsNamesList) {
         List<ModelOnScene> selectedModelsList = new ArrayList();
 
@@ -128,7 +128,7 @@ public class Scene {
             int selectedModelIndex = (Integer)var2.next();
             modelOnScene = (ModelOnScene)ModelsOnSceneList.get(selectedModelIndex);
             if (!modelOnScene.isSaveWithChanges()) {
-                modelOnScene = modelOnScene.subtract(modelOnScene.getTransition());
+                modelOnScene = modelOnScene.subtract(modelOnScene.gett());
             }
         }
 

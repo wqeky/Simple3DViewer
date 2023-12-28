@@ -141,7 +141,7 @@ public final class ModelOnScene extends Model {
     public ModelOnScene subtractVec(Vector3f vector3f) {
         ModelOnScene modelOnScene = new ModelOnScene();
 
-        for (Vector3f other : this.vertices) {
+        for (Vector3f other : this.vertices) { //надо проверить
             Vector3f vertex = new Vector3f(other.getX(), other.getY(), other.getZ());
             vertex.subtractVec(vector3f);
             modelOnScene.addVertex(vertex);

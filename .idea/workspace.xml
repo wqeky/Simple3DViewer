@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebbbc371-9c3e-484b-bf5c-a751008d4637" name="Changes" comment="vector2f change">
+    <list default="true" id="ebbbc371-9c3e-484b-bf5c-a751008d4637" name="Changes" comment="сломала и починила Vector3f и класс Кати ModelOnScene">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/math/Vector3f.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/math/Vector3f.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/math/VectorsAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/math/VectorsAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/model/ModelOnScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/model/ModelOnScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/math/Vector2f.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/math/Vector2f.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/render_scene/GraphicsConveyor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/render_scene/GraphicConveyor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/render_scene/RenderEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/render_scene/RenderEngine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703778891186</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="сломала и починила Vector3f и класс Кати ModelOnScene">
+      <created>1703780389270</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1703780389270</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,6 +152,7 @@
     <MESSAGE value="change visibility in Vector3f, change RenderEngine" />
     <MESSAGE value="поправка доступности" />
     <MESSAGE value="vector2f change" />
-    <option name="LAST_COMMIT_MESSAGE" value="vector2f change" />
+    <MESSAGE value="сломала и починила Vector3f и класс Кати ModelOnScene" />
+    <option name="LAST_COMMIT_MESSAGE" value="сломала и починила Vector3f и класс Кати ModelOnScene" />
   </component>
 </project>

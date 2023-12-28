@@ -1,4 +1,5 @@
 package com.cgvsu.math;
+
 public class Vector2f {
     public Vector2f(double x, double y) {
         this.x = x;
@@ -6,8 +7,8 @@ public class Vector2f {
 
     }
 
-    public double x;
-    public double y;
+    private double x;
+    private double y;
     public double get(int index) {
         switch (index){
             case 0: return x;

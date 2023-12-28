@@ -1,12 +1,10 @@
 package com.cgvsu.render_scene;
+import javax.vecmath.*;
 
-import javax.vecmath.Matrix4f;
-import javax.vecmath.Vector3f;
-import javax.vecmath.Point2f;
+//исходный класс И.М. Косенко, в нем все работает
+public class GraphicConveyor {
 
-public class GraphicsConveyor {
-
-    public static Matrix4f createRotationScaleTranslationMatrix() {
+    public static Matrix4f rotateScaleTranslate() {
         float[] matrix = new float[]{
                 1, 0, 0, 0,
                 0, 1, 0, 0,
@@ -15,11 +13,11 @@ public class GraphicsConveyor {
         return new Matrix4f(matrix);
     }
 
-    public static Matrix4f generateLookAtMatrix(Vector3f eye, Vector3f target) {
-        return generateLookAtMatrix(eye, target, new Vector3f(0F, 1.0F, 0F));
+    public static Matrix4f lookAt(Vector3f eye, Vector3f target) {
+        return lookAt(eye, target, new Vector3f(0F, 1.0F, 0F));
     }
 
-    public static Matrix4f generateLookAtMatrix(Vector3f eye, Vector3f target, Vector3f up) {
+    public static Matrix4f lookAt(Vector3f eye, Vector3f target, Vector3f up) {
         Vector3f resultX = new Vector3f();
         Vector3f resultY = new Vector3f();
         Vector3f resultZ = new Vector3f();
@@ -40,7 +38,7 @@ public class GraphicsConveyor {
         return new Matrix4f(matrix);
     }
 
-    public static Matrix4f generatePerspectiveMatrix(
+    public static Matrix4f perspective(
             final float fov,
             final float aspectRatio,
             final float nearPlane,
@@ -55,7 +53,7 @@ public class GraphicsConveyor {
         return result;
     }
 
-    public static Vector3f transformVectorByMatrix(final Matrix4f matrix, final Vector3f vertex) {
+    public static Vector3f multiplyMatrix4ByVector3(final Matrix4f matrix, final Vector3f vertex) {
         final float x = (vertex.x * matrix.m00) + (vertex.y * matrix.m10) + (vertex.z * matrix.m20) + matrix.m30;
         final float y = (vertex.x * matrix.m01) + (vertex.y * matrix.m11) + (vertex.z * matrix.m21) + matrix.m31;
         final float z = (vertex.x * matrix.m02) + (vertex.y * matrix.m12) + (vertex.z * matrix.m22) + matrix.m32;
@@ -63,7 +61,7 @@ public class GraphicsConveyor {
         return new Vector3f(x / w, y / w, z / w);
     }
 
-    public static Point2f convertVertexToPoint(final Vector3f vertex, final int width, final int height) {
+    public static Point2f vertexToPoint(final Vector3f vertex, final int width, final int height) {
         return new Point2f(vertex.x * width + width / 2.0F, -vertex.y * height + height / 2.0F);
     }
 }

@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebbbc371-9c3e-484b-bf5c-a751008d4637" name="Changes" comment="поправка доступности">
+    <list default="true" id="ebbbc371-9c3e-484b-bf5c-a751008d4637" name="Changes" comment="vector2f change">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/math/Vector2f.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/math/Vector2f.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/math/Vector3f.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/math/Vector3f.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/math/VectorsAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/math/VectorsAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/model/ModelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/model/ModelUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rasterezation/Baricentric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rasterezation/Baricentric.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/model/ModelOnScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/model/ModelOnScene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703682230521</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="vector2f change">
+      <created>1703778891186</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1703778891186</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -139,6 +144,7 @@
     <MESSAGE value="master branch with math and some other features" />
     <MESSAGE value="change visibility in Vector3f, change RenderEngine" />
     <MESSAGE value="поправка доступности" />
-    <option name="LAST_COMMIT_MESSAGE" value="поправка доступности" />
+    <MESSAGE value="vector2f change" />
+    <option name="LAST_COMMIT_MESSAGE" value="vector2f change" />
   </component>
 </project>

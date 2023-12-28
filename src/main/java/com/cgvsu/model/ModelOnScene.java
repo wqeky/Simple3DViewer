@@ -123,12 +123,12 @@ public final class ModelOnScene extends Model {
         this.texture = texture;
     }
 
-    public ModelOnScene add(Vector3f vector3f) {
+    public ModelOnScene sumVec(Vector3f vector3f) {
         ModelOnScene modelOnScene = new ModelOnScene();
 
-        for (Vector3f vector : this.vertices) {
-            Vector3f vertex = new Vector3f(vector);
-            vertex.add(vector3f);
+        for (Vector3f other : this.vertices) {
+            Vector3f vertex = new Vector3f(other.getX(), other.getY(), other.getZ());
+            vertex.sumVec(vector3f);
             modelOnScene.addVertex(vertex);
         }
         modelOnScene.addTextureVertices(this.textureVertices);
@@ -138,12 +138,12 @@ public final class ModelOnScene extends Model {
         return modelOnScene;
     }
 
-    public ModelOnScene subtract(Vector3f vector3f) {
+    public ModelOnScene subtractVec(Vector3f vector3f) {
         ModelOnScene modelOnScene = new ModelOnScene();
 
-        for (Vector3f vector : this.vertices) {
-            Vector3f vertex = new Vector3f(vector);
-            vertex.subtract(vector3f);
+        for (Vector3f other : this.vertices) {
+            Vector3f vertex = new Vector3f(other.getX(), other.getY(), other.getZ());
+            vertex.subtractVec(vector3f);
             modelOnScene.addVertex(vertex);
         }
         modelOnScene.addTextureVertices(this.textureVertices);
@@ -155,21 +155,21 @@ public final class ModelOnScene extends Model {
 
     public void movePosition(final Vector3f transition) {
         for (Vector3f vector : this.vertices) {
-            vector.subtract(this.translation);
+            vector.subtractVec(this.translation);
         }
-        this.translation.add(transition);
+        this.translation.sumVec(transition);
         for (Vector3f vector : this.vertices) {
-            vector.add(this.translation);
+            vector.sumVec(this.translation);
         }
     }
 
     public void applyMovePosition(final Vector3f transition) {
         for (Vector3f vector : this.vertices) {
-            vector.subtract(this.translation);
+            vector.subtractVec(this.translation);
         }
         this.translation = transition;
         for (Vector3f vector : this.vertices) {
-            vector.add(this.translation);
+            vector.sumVec(this.translation);
         }
     }
 

@@ -1,4 +1,4 @@
-package com.cgvsu.math;
+/*package com.cgvsu.math;
 
 import java.util.ArrayList;
 
@@ -16,7 +16,6 @@ public class VectorsAction  {
         }
         return new Vector3f(x, y, z);
     }
-//умножение вектора на на число
 
     public static Vector3f sumVectors(ArrayList<Vector3f> vectors) {
         float x = vectors.get(0).getX();
@@ -45,4 +44,4 @@ public class VectorsAction  {
     public static Vector3f createFromTwoPoints(Vector3f vertex1, Vector3f vertex2) {
         return new Vector3f(vertex2.getX() - vertex1.getX(), vertex2.getY() - vertex1.getY(), vertex2.getZ() - vertex1.getZ());
     }
-}
+}*/

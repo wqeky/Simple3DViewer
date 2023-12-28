@@ -2,11 +2,9 @@ package com.cgvsu.math;
 
 import java.util.ArrayList;
 
-public class VectorsAction  extends Vector3f{
 
-    public VectorsAction(float x, float y, float z) {
-        super(x, y, z);
-    }
+public class VectorsAction  {
+
     public static Vector3f sumVectors(Vector3f... vectors) {
         float x = vectors[0].getX();
         float y = vectors[0].getY();
@@ -18,6 +16,7 @@ public class VectorsAction  extends Vector3f{
         }
         return new Vector3f(x, y, z);
     }
+//умножение вектора на на число
 
     public static Vector3f sumVectors(ArrayList<Vector3f> vectors) {
         float x = vectors.get(0).getX();
@@ -31,12 +30,6 @@ public class VectorsAction  extends Vector3f{
         return new Vector3f(x, y, z);
     }
 
-    public Vector3f divideScalar(float num) {
-        final float eps = 1e-7f;
-        if (num - 0 < eps)
-            throw new ArithmeticException("Division by zero");
-        return new Vector3f(x / num, y / num, z / num);
-    }
 
     public static Vector3f calculateCrossProduct(Vector3f vector1, Vector3f vector2) {
         float x = vector1.getY() * vector2.getZ() - vector1.getZ() * vector2.getY();

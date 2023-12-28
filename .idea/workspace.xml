@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebbbc371-9c3e-484b-bf5c-a751008d4637" name="Changes" comment="change visibility in Vector3f, change RenderEngine">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/model/Model.java" afterDir="false" />
+    <list default="true" id="ebbbc371-9c3e-484b-bf5c-a751008d4637" name="Changes" comment="поправка доступности">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/math/Vector2f.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/math/Vector2f.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/math/Vector3f.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/math/Vector3f.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/math/VectorsAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/math/VectorsAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/model/ModelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/model/ModelUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rasterezation/Baricentric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rasterezation/Baricentric.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +56,26 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Sonik/Downloads/Simple3DViewer/Simple3DViewer&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Simple3DViewer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cgvsu.Simple3DViewer" />
+      <module name="Simple3DViewer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cgvsu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Simple3DViewer" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -82,7 +106,21 @@
       <option name="project" value="LOCAL" />
       <updated>1703670617028</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="поправка доступности">
+      <created>1703681986447</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703681986447</updated>
+    </task>
+    <task id="LOCAL-00005" summary="поправка доступности">
+      <created>1703682230521</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703682230521</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -100,6 +138,7 @@
     <MESSAGE value="3f, 2f add" />
     <MESSAGE value="master branch with math and some other features" />
     <MESSAGE value="change visibility in Vector3f, change RenderEngine" />
-    <option name="LAST_COMMIT_MESSAGE" value="change visibility in Vector3f, change RenderEngine" />
+    <MESSAGE value="поправка доступности" />
+    <option name="LAST_COMMIT_MESSAGE" value="поправка доступности" />
   </component>
 </project>

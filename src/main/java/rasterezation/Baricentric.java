@@ -1,4 +1,4 @@
-package com.cgvsu.rasterization;
+package com.cgvsu.rasterezation;
 
 import com.cgvsu.math.Vector2f;
 

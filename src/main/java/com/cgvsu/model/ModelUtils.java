@@ -64,7 +64,7 @@ public class ModelUtils {
             }
         }
         Vector3f result = VectorsAction.sumVectors(saved);
-        VectorsAction va = new VectorsAction(result.getX(), result.getY(), result.getZ());
+        Vector3f va = new Vector3f(result.getX(), result.getY(), result.getZ());
         return va.divideScalar(saved.size());
     }
 }

@@ -9,6 +9,13 @@ public class Vector3f {
         this.y = y;
         this.z = z;
     }
+    public Vector3f divideScalar(float num) {
+        final float eps = 1e-7f;
+        if (num - 0 < eps)
+            throw new ArithmeticException("Division by zero");
+        return new Vector3f(x / num, y / num, z / num);
+    }
+
     public float getX() {
         return x;
     }
@@ -48,6 +55,7 @@ public class Vector3f {
         this.y -= vector.y;
         this.z -= vector.z;
     }
+    //длина вектора
 
     public boolean equals(Vector3f other) {
         final float eps = 1e-7f;

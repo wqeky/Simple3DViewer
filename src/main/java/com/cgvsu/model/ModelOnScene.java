@@ -181,6 +181,58 @@ public final class ModelOnScene extends Model {
             vector.sumVec(this.translation);
         }
     }
+    public void scale(final Vector3f scaleFactor) {
+        for (Vector3f vertex : this.vertices) {
+            vertex.setX(vertex.getX() * scaleFactor.getX());
+            vertex.setY(vertex.getY() * scaleFactor.getY());
+            vertex.setZ(vertex.getZ() * scaleFactor.getZ());
+        }
+
+        for (Vector3f normal : this.normals) {
+            normal.setX(normal.getX() * scaleFactor.getX());
+            normal.setY(normal.getY() * scaleFactor.getY());
+            normal.setZ(normal.getZ() * scaleFactor.getZ());
+        }
+
+    }
+    public void rotate(final Vector3f rotationAngles) {
+        for (Vector3f vertex : this.vertices) {
+            double x = vertex.getX();
+            double y = vertex.getY();
+            double z = vertex.getZ();
+
+            // Apply rotation around X-axis
+            double tempY = y * Math.cos(rotationAngles.getX()) - z * Math.sin(rotationAngles.getX());
+            double tempZ = y * Math.sin(rotationAngles.getX()) + z * Math.cos(rotationAngles.getX());
+            y = tempY;
+            z = tempZ;
+
+            // Apply rotation around Y-axis
+            double tempX = x * Math.cos(rotationAngles.getY()) + z * Math.sin(rotationAngles.getY());
+            z = -x * Math.sin(rotationAngles.getY()) + z * Math.cos(rotationAngles.getY());
+            x = tempX;
+
+            // Apply rotation around Z-axis
+            tempX = x * Math.cos(rotationAngles.getZ()) - y * Math.sin(rotationAngles.getZ());
+            tempY = x * Math.sin(rotationAngles.getZ()) + y * Math.cos(rotationAngles.getZ());
+            x = tempX;
+            y = tempY;
+
+            vertex.setX(x);
+            vertex.setY(y);
+            vertex.setZ(z);
+        }
+
+        for (Vector3f normal : this.normals) {
+            double nx = normal.getX();
+            double ny = normal.getY();
+            double nz = normal.getZ();
+
+            normal.setX(nx);
+            normal.setY(ny);
+            normal.setZ(nz);
+        }
+    }
 
 
     public static ModelOnScene createMetaModel(final List<ModelOnScene> ModelList) {

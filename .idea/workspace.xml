@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebbbc371-9c3e-484b-bf5c-a751008d4637" name="Changes" comment="matrix 3x3 create, fix some bug">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/Scene.java" afterDir="false" />
+    <list default="true" id="ebbbc371-9c3e-484b-bf5c-a751008d4637" name="Changes" comment="чиню Scene">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/model/ModelOnScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/model/ModelOnScene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -160,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703784665146</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="чиню Scene">
+      <created>1703860197530</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1703860197530</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -183,6 +188,7 @@
     <MESSAGE value="сломала и починила Vector3f и класс Кати ModelOnScene" />
     <MESSAGE value="починила RenderEngine" />
     <MESSAGE value="matrix 3x3 create, fix some bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="matrix 3x3 create, fix some bug" />
+    <MESSAGE value="чиню Scene" />
+    <option name="LAST_COMMIT_MESSAGE" value="чиню Scene" />
   </component>
 </project>

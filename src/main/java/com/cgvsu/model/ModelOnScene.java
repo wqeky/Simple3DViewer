@@ -11,7 +11,9 @@ import static com.cgvsu.model.Polygon.changePolygonsNumeration;
 
 public final class ModelOnScene extends Model {
     private Vector3f translation;
+    private Vector3f scale;
 
+    private Vector3f rotation;
     private boolean drawModel;
     private boolean drawPolygonMesh;
     private boolean drawColorFilling;
@@ -25,6 +27,8 @@ public final class ModelOnScene extends Model {
         super();
 
         this.translation = new Vector3f(0, 0, 0);
+        this.scale = new Vector3f(-1,-1,-1);
+        this.rotation = new Vector3f(0,0,0);
 
         this.drawModel = true;
         this.drawPolygonMesh = true;
@@ -40,7 +44,8 @@ public final class ModelOnScene extends Model {
         super(model);
 
         this.translation = new Vector3f(0, 0, 0);
-
+        this.scale = new Vector3f(-1,-1,-1);
+        this.rotation = new Vector3f(0, 0, 0);
         this.drawModel = true;
         this.drawPolygonMesh = true;
         this.drawColorFilling = false;
@@ -78,6 +83,8 @@ public final class ModelOnScene extends Model {
     public Vector3f getTranslation() {
         return this.translation;
     }
+    public Vector3f getScale(){return this.scale;}
+    public Vector3f getRotation(){return this.rotation;}
 
     public Color getColor() {
         return this.color;
@@ -114,6 +121,8 @@ public final class ModelOnScene extends Model {
     public void setTranslation(final Vector3f translation) {
         this.translation = translation;
     }
+    public void setScale(final Vector3f scale){this.scale = scale;}
+    public void setRotation(final Vector3f scale){this.rotation = rotation;}
 
     public void setColor(Color color) {
         this.color = color;
@@ -172,6 +181,7 @@ public final class ModelOnScene extends Model {
             vector.sumVec(this.translation);
         }
     }
+
 
     public static ModelOnScene createMetaModel(final List<ModelOnScene> ModelList) {
         ModelOnScene metaModelOnScene = new ModelOnScene();

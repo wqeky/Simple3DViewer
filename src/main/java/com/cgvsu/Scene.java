@@ -128,7 +128,7 @@ public class Scene {
             int selectedModelIndex = (Integer)var2.next();
             modelOnScene = (ModelOnScene)ModelsOnSceneList.get(selectedModelIndex);
             if (!modelOnScene.isSaveWithChanges()) {
-                modelOnScene = modelOnScene.subtract(modelOnScene.gett());
+                modelOnScene = modelOnScene.subtractVec(modelOnScene.getTranslation());
             }
         }
 
@@ -269,7 +269,7 @@ public class Scene {
             while(var1.hasNext()) {
                 ModelOnScene modelOnScene = (ModelOnScene)var1.next();
                 modelOnScene.applyMovePosition(new com.cgvsu.math.Vector3f(0.0F, 0.0F, 0.0F));
-                modelOnScene.setTransition(new com.cgvsu.math.Vector3f(0.0F, 0.0F, 0.0F));
+                modelOnScene.setTranslation(new com.cgvsu.math.Vector3f(0, 0, 0));
             }
 
             ModelOnScene modelOnScene = new ModelOnScene();

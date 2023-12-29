@@ -28,6 +28,8 @@ import javax.vecmath.Vector3f;
 
 public class Scene {
     public static final float TRANSLATION = 0.5F;
+    public static final float SCALING = 0.5F;
+    public static final float ROTATION = 0.5F;
     public static List<Camera> CamerasList;
     public static Camera currentCamera;
     public static List<ModelOnScene> ModelsOnSceneList;

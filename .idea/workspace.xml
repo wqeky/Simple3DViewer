@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebbbc371-9c3e-484b-bf5c-a751008d4637" name="Changes" comment="чиню Scene">
+    <list default="true" id="ebbbc371-9c3e-484b-bf5c-a751008d4637" name="Changes" comment="аффинные преобразования в ModelOnScene.java">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/Scene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cgvsu/model/ModelOnScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cgvsu/model/ModelOnScene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -165,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703860197530</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="аффинные преобразования в ModelOnScene.java">
+      <created>1703860805262</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1703860805262</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -189,6 +197,7 @@
     <MESSAGE value="починила RenderEngine" />
     <MESSAGE value="matrix 3x3 create, fix some bug" />
     <MESSAGE value="чиню Scene" />
-    <option name="LAST_COMMIT_MESSAGE" value="чиню Scene" />
+    <MESSAGE value="аффинные преобразования в ModelOnScene.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="аффинные преобразования в ModelOnScene.java" />
   </component>
 </project>

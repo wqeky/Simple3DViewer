@@ -181,7 +181,7 @@ public final class ModelOnScene extends Model {
             vector.sumVec(this.translation);
         }
     }
-    public void scale(final Vector3f scaleFactor) {
+    public void scaleModel(final Vector3f scaleFactor) {
         for (Vector3f vertex : this.vertices) {
             vertex.setX(vertex.getX() * scaleFactor.getX());
             vertex.setY(vertex.getY() * scaleFactor.getY());
@@ -195,7 +195,7 @@ public final class ModelOnScene extends Model {
         }
 
     }
-    public void rotate(final Vector3f rotationAngles) {
+    public void rotateModel(final Vector3f rotationAngles) {
         for (Vector3f vertex : this.vertices) {
             double x = vertex.getX();
             double y = vertex.getY();

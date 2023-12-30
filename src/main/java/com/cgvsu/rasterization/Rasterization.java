@@ -96,7 +96,7 @@ public class Rasterization {
 
         Color clr;
         for (int xs = (int) Math.round(startX + 0.5); xs < endX; xs++){
-            com.cgvsu.rasterization.Baricentric bc = new com.cgvsu.rasterization.Baricentric(p1, p2, p3, new com.cgvsu.rasterization.MyPoint2D(xs, ys));
+            Baricentric bc = new Baricentric(p1, p2, p3, new com.cgvsu.rasterization.MyPoint2D(xs, ys));
             double xtexture =  bc.u* p1t.getX() + bc.v* p2t.getX() + bc.w* p3t.getX();
             double ytexture =  bc.u* p1t.getY() + bc.v* p2t.getY() + bc.w* p3t.getY();
             xtexture *= texture.getWidth();

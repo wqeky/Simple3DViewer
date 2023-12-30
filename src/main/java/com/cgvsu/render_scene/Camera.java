@@ -1,22 +1,38 @@
 package com.cgvsu.render_scene;
-import javax.vecmath.Vector3f;
-import javax.vecmath.Matrix4f;
 
-public class Camera {
+import javax.vecmath.*;
 
-    public Camera(
-            final Vector3f position,
-            final Vector3f target,
-            final float fov,
-            final float aspectRatio,
-            final float nearPlane,
-            final float farPlane) {
+public class Camera { // исходный класс от Косенко, тут какие-то математические преобразования :)
+    // TODO не трогать!!! польностью готов и работает!!!
+
+    private Vector3f position;
+    private Vector3f target;
+    private final float fov;
+    private float aspectRatio;
+    private final float nearPlane;
+    private final float farPlane;
+
+    public Camera() {
+        this.position = new Vector3f(0, 0, 0);
+        this.target = new Vector3f(0, 0, 0);
+        this.fov = 0F;
+        this.aspectRatio = 0F;
+        this.nearPlane = 0F;
+        this.farPlane = 0F;
+    }
+
+    public Camera(final Vector3f position, final Vector3f target, final float fov, final float aspectRatio, final float nearPlane, final float farPlane) {
         this.position = position;
         this.target = target;
         this.fov = fov;
         this.aspectRatio = aspectRatio;
         this.nearPlane = nearPlane;
         this.farPlane = farPlane;
+    }
+
+    public boolean equalsEmptyCamera() {
+        return (this.position.equals(new Vector3f(0, 0, 0))) && (this.target.equals(new Vector3f(0, 0, 0))) &&
+                (this.fov == 0F) && (this.aspectRatio == 0F) && (this.nearPlane == 0F) && (this.farPlane == 0F);
     }
 
     public void setPosition(final Vector3f position) {
@@ -44,21 +60,14 @@ public class Camera {
     }
 
     public void moveTarget(final Vector3f translation) {
-        this.target.add(target);
+        this.target.add(translation);
     }
 
     Matrix4f getViewMatrix() {
-        return GraphicsConveyor.generateLookAtMatrix(position, target);
+        return GraphicConveyor.lookAt(position, target);
     }
 
     Matrix4f getProjectionMatrix() {
-        return GraphicsConveyor.generatePerspectiveMatrix(fov, aspectRatio, nearPlane, farPlane);
+        return GraphicConveyor.perspective(fov, aspectRatio, nearPlane, farPlane);
     }
-
-    private Vector3f position;
-    private Vector3f target;
-    private float fov;
-    private float aspectRatio;
-    private float nearPlane;
-    private float farPlane;
 }

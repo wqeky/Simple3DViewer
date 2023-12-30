@@ -1,14 +1,14 @@
 package com.cgvsu.model;
 
 import com.cgvsu.math.Vector3f;
-import com.cgvsu.math.VectorsAction;
+import com.cgvsu.math.VectorUtils;
 
 import java.util.ArrayList;
 
-import static com.cgvsu.math.VectorsAction.calculateCrossProduct;
-import static com.cgvsu.math.VectorsAction.createFromTwoPoints;
+import static com.cgvsu.math.VectorUtils.calculateCrossProduct;
+import static com.cgvsu.math.VectorUtils.fromTwoPoints;
 
-public class ModelUtils {
+public class ModelUtils { // класс преобразования модели (операций над моделью)
 
     public static void recalculateNormals(Model model) {
         model.normals.clear();
@@ -50,8 +50,8 @@ public class ModelUtils {
         ArrayList<Integer> vertexIndices = (ArrayList<Integer>) polygon.getVertexIndices();
         int verticesCount = vertexIndices.size();
 
-        Vector3f vector1 = createFromTwoPoints(model.vertices.get(vertexIndices.get(0)), model.vertices.get(vertexIndices.get(1)));
-        Vector3f vector2 = createFromTwoPoints(model.vertices.get(vertexIndices.get(0)), model.vertices.get(vertexIndices.get(verticesCount - 1)));
+        Vector3f vector1 = fromTwoPoints(model.vertices.get(vertexIndices.get(0)), model.vertices.get(vertexIndices.get(1)));
+        Vector3f vector2 = fromTwoPoints(model.vertices.get(vertexIndices.get(0)), model.vertices.get(vertexIndices.get(verticesCount - 1)));
 
         return calculateCrossProduct(vector1, vector2);
     }
@@ -63,8 +63,8 @@ public class ModelUtils {
                 saved.add(calculateNormalForPolygon(polygon, model));
             }
         }
-        Vector3f result = VectorsAction.sumVectors(saved);
-        Vector3f va = new Vector3f(result.getX(), result.getY(), result.getZ());
-        return va.divideScalar(saved.size());
+        Vector3f result = VectorUtils.sum(saved);
+        VectorUtils vu = new VectorUtils(result.getX(), result.getY(), result.getZ());
+        return vu.divide(saved.size());
     }
 }

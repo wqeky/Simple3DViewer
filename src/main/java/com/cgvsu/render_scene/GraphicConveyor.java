@@ -1,8 +1,9 @@
 package com.cgvsu.render_scene;
+
 import javax.vecmath.*;
 
-//исходный класс И.М. Косенко, в нем все работает
-public class GraphicConveyor {
+public class GraphicConveyor { // исходный класс от Косенко, тут какие-то математические преобразования :)
+    // TODO не трогать!!! польностью готов и работает!!!
 
     public static Matrix4f rotateScaleTranslate() {
         float[] matrix = new float[]{
@@ -38,11 +39,7 @@ public class GraphicConveyor {
         return new Matrix4f(matrix);
     }
 
-    public static Matrix4f perspective(
-            final float fov,
-            final float aspectRatio,
-            final float nearPlane,
-            final float farPlane) {
+    public static Matrix4f perspective(final float fov, final float aspectRatio, final float nearPlane, final float farPlane) {
         Matrix4f result = new Matrix4f();
         float tangentMinusOnDegree = (float) (1.0F / (Math.tan(fov * 0.5F)));
         result.m00 = tangentMinusOnDegree / aspectRatio;

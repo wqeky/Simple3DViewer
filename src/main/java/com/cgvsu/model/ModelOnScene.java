@@ -2,18 +2,17 @@ package com.cgvsu.model;
 
 import com.cgvsu.math.Vector3f;
 
-import javafx.scene.paint.Color;
-import javafx.scene.image.Image;
+import static com.cgvsu.model.Polygon.changePolygonsNumeration;
 
 import java.util.List;
 
-import static com.cgvsu.model.Polygon.changePolygonsNumeration;
+import javafx.scene.paint.Color;
+import javafx.scene.image.Image;
 
 public final class ModelOnScene extends Model {
-    private Vector3f translation;
-    private Vector3f scale;
+    private Vector3f transition;
 
-    private Vector3f rotation;
+
     private boolean drawModel;
     private boolean drawPolygonMesh;
     private boolean drawColorFilling;
@@ -26,9 +25,7 @@ public final class ModelOnScene extends Model {
     public ModelOnScene() {
         super();
 
-        this.translation = new Vector3f(0, 0, 0);
-        this.scale = new Vector3f(-1,-1,-1);
-        this.rotation = new Vector3f(0,0,0);
+        this.transition = new Vector3f(0, 0, 0);
 
         this.drawModel = true;
         this.drawPolygonMesh = true;
@@ -38,14 +35,15 @@ public final class ModelOnScene extends Model {
         this.saveWithChanges = true;
         this.color = null;
         this.texture = null;
+
+
     }
 
     public ModelOnScene(final Model model) {
         super(model);
 
-        this.translation = new Vector3f(0, 0, 0);
-        this.scale = new Vector3f(-1,-1,-1);
-        this.rotation = new Vector3f(0, 0, 0);
+        this.transition = new Vector3f(0, 0, 0);
+
         this.drawModel = true;
         this.drawPolygonMesh = true;
         this.drawColorFilling = false;
@@ -54,6 +52,9 @@ public final class ModelOnScene extends Model {
         this.saveWithChanges = true;
         this.color = null;
         this.texture = null;
+
+
+        // по умолчанию значения перемещения и поворота должны быть 0, а масштабирования - 1
     }
 
     public boolean isDrawModel() {
@@ -80,11 +81,9 @@ public final class ModelOnScene extends Model {
         return saveWithChanges;
     }
 
-    public Vector3f getTranslation() {
-        return this.translation;
+    public Vector3f getTransition() {
+        return this.transition;
     }
-    public Vector3f getScale(){return this.scale;}
-    public Vector3f getRotation(){return this.rotation;}
 
     public Color getColor() {
         return this.color;
@@ -118,11 +117,9 @@ public final class ModelOnScene extends Model {
         this.saveWithChanges = saveWithChanges;
     }
 
-    public void setTranslation(final Vector3f translation) {
-        this.translation = translation;
+    public void setTransition(final Vector3f transition) {
+        this.transition = transition;
     }
-    public void setScale(final Vector3f scale){this.scale = scale;}
-    public void setRotation(final Vector3f scale){this.rotation = rotation;}
 
     public void setColor(Color color) {
         this.color = color;
@@ -132,12 +129,12 @@ public final class ModelOnScene extends Model {
         this.texture = texture;
     }
 
-    public ModelOnScene sumVec(Vector3f vector3f) {
+    public ModelOnScene add(Vector3f vector3f) {
         ModelOnScene modelOnScene = new ModelOnScene();
 
-        for (Vector3f other : this.vertices) {
-            Vector3f vertex = new Vector3f(other.getX(), other.getY(), other.getZ());
-            vertex.sumVec(vector3f);
+        for (Vector3f vector : this.vertices) {
+            Vector3f vertex = new Vector3f(vector);
+            vertex.add(vector3f);
             modelOnScene.addVertex(vertex);
         }
         modelOnScene.addTextureVertices(this.textureVertices);
@@ -147,12 +144,12 @@ public final class ModelOnScene extends Model {
         return modelOnScene;
     }
 
-    public ModelOnScene subtractVec(Vector3f vector3f) {
+    public ModelOnScene subtract(Vector3f vector3f) {
         ModelOnScene modelOnScene = new ModelOnScene();
 
-        for (Vector3f other : this.vertices) { //надо проверить
-            Vector3f vertex = new Vector3f(other.getX(), other.getY(), other.getZ());
-            vertex.subtractVec(vector3f);
+        for (Vector3f vector : this.vertices) {
+            Vector3f vertex = new Vector3f(vector);
+            vertex.subtract(vector3f);
             modelOnScene.addVertex(vertex);
         }
         modelOnScene.addTextureVertices(this.textureVertices);
@@ -164,76 +161,23 @@ public final class ModelOnScene extends Model {
 
     public void movePosition(final Vector3f transition) {
         for (Vector3f vector : this.vertices) {
-            vector.subtractVec(this.translation);
+            vector.subtract(this.transition);
         }
-        this.translation.sumVec(transition);
+        this.transition.add(transition);
         for (Vector3f vector : this.vertices) {
-            vector.sumVec(this.translation);
+            vector.add(this.transition);
         }
     }
 
     public void applyMovePosition(final Vector3f transition) {
         for (Vector3f vector : this.vertices) {
-            vector.subtractVec(this.translation);
+            vector.subtract(this.transition);
         }
-        this.translation = transition;
+        this.transition = transition;
         for (Vector3f vector : this.vertices) {
-            vector.sumVec(this.translation);
+            vector.add(this.transition);
         }
     }
-    public void scaleModel(final Vector3f scaleFactor) {
-        for (Vector3f vertex : this.vertices) {
-            vertex.setX(vertex.getX() * scaleFactor.getX());
-            vertex.setY(vertex.getY() * scaleFactor.getY());
-            vertex.setZ(vertex.getZ() * scaleFactor.getZ());
-        }
-
-        for (Vector3f normal : this.normals) {
-            normal.setX(normal.getX() * scaleFactor.getX());
-            normal.setY(normal.getY() * scaleFactor.getY());
-            normal.setZ(normal.getZ() * scaleFactor.getZ());
-        }
-
-    }
-    public void rotateModel(final Vector3f rotationAngles) {
-        for (Vector3f vertex : this.vertices) {
-            double x = vertex.getX();
-            double y = vertex.getY();
-            double z = vertex.getZ();
-
-            // Apply rotation around X-axis
-            double tempY = y * Math.cos(rotationAngles.getX()) - z * Math.sin(rotationAngles.getX());
-            double tempZ = y * Math.sin(rotationAngles.getX()) + z * Math.cos(rotationAngles.getX());
-            y = tempY;
-            z = tempZ;
-
-            // Apply rotation around Y-axis
-            double tempX = x * Math.cos(rotationAngles.getY()) + z * Math.sin(rotationAngles.getY());
-            z = -x * Math.sin(rotationAngles.getY()) + z * Math.cos(rotationAngles.getY());
-            x = tempX;
-
-            // Apply rotation around Z-axis
-            tempX = x * Math.cos(rotationAngles.getZ()) - y * Math.sin(rotationAngles.getZ());
-            tempY = x * Math.sin(rotationAngles.getZ()) + y * Math.cos(rotationAngles.getZ());
-            x = tempX;
-            y = tempY;
-
-            vertex.setX(x);
-            vertex.setY(y);
-            vertex.setZ(z);
-        }
-
-        for (Vector3f normal : this.normals) {
-            double nx = normal.getX();
-            double ny = normal.getY();
-            double nz = normal.getZ();
-
-            normal.setX(nx);
-            normal.setY(ny);
-            normal.setZ(nz);
-        }
-    }
-
 
     public static ModelOnScene createMetaModel(final List<ModelOnScene> ModelList) {
         ModelOnScene metaModelOnScene = new ModelOnScene();

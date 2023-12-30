@@ -3,7 +3,7 @@ package com.cgvsu.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Polygon {
+public class Polygon { // класс полигона модели
     private List<Integer> vertexIndices;
     private List<Integer> textureVertexIndices;
     private List<Integer> normalIndices;

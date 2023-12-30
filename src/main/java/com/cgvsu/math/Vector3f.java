@@ -1,5 +1,66 @@
 package com.cgvsu.math;
 
+public class Vector3f { // вектор в 3-мерном пространстве
+    protected float x;
+    protected float y;
+    protected float z;
+
+    public Vector3f(Vector3f vector3f) {
+        this.x = vector3f.x;
+        this.y = vector3f.y;
+        this.z = vector3f.z;
+    }
+
+    public Vector3f(float x, float y, float z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
+
+    public void setX(final float x) {
+        this.x = x;
+    }
+
+    public void setY(final float y) {
+        this.y = y;
+    }
+
+    public void setZ(final float z) {
+        this.z = z;
+    }
+
+    public float getX() {
+        return this.x;
+    }
+
+    public float getY() {
+        return this.y;
+    }
+
+    public float getZ() {
+        return this.z;
+    }
+
+    public void add(Vector3f vector) {
+        this.x += vector.x;
+        this.y += vector.y;
+        this.z += vector.z;
+    }
+
+    public void subtract(Vector3f vector) {
+        this.x -= vector.x;
+        this.y -= vector.y;
+        this.z -= vector.z;
+    }
+
+    public boolean equals(final Vector3f other) {
+        final float eps = 1e-7f;
+        return (Math.abs(x - other.x) < eps) && (Math.abs(y - other.y) < eps) && (Math.abs(z - other.z) < eps);
+    }
+}
+/*
+package com.cgvsu.math;
+
 public class Vector3f {
 
     private double x;
@@ -95,7 +156,8 @@ public class Vector3f {
                 this.x * other.y - this.y * other.x
         );
     }
-    /*public float x;
+    */
+/*public float x;
     public float y;
     public float z;
     public Vector3f(float x, float y, float z) {
@@ -155,6 +217,8 @@ public class Vector3f {
         final float eps = 1e-7f;
         return Math.abs(x - other.x) < eps && Math.abs(y - other.y) < eps && Math.abs(z - other.z) < eps;
     }
-*/
+*//*
+
 
 }
+*/

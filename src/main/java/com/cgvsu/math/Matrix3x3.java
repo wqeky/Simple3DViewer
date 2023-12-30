@@ -38,7 +38,7 @@ public class Matrix3x3{
     }
 
     //Умножение на вектор3Д
-    public Vector3f multiplyMatrix(Vector3f vector) {
+    /*public Vector3f multiplyMatrix(Vector3f vector) {
         if (vector == null) {
             throw new NullPointerException("Вектор не может быть нулевым");
         }
@@ -50,7 +50,7 @@ public class Matrix3x3{
             }
         }
         return new Vector3f(result[0],result[1], result[2]);
-    }
+    }*/
 
     // Умножение на матрицу
     public Matrix3x3 multiplyMatrix(Matrix3x3 other) {

@@ -1084,33 +1084,6 @@ public class GuiController {
         editModelTransitionYSpinnerValue.setValue(Y);
         editModelTransitionZSpinnerValue.setValue(Z);
 
-
-        // старые сообщения моему коллеге
-        // todo !!! ВАЖНО !!!
-        // todo переменные rotation должны быть double
-        // todo и быть углами поворота (отрицательными - если против часовой стрелки)
-
-        // todo считывание переменных rotation из модели и вывод в форму
-
-        /* editModelRotationXSpinnerValue.setValue(rotationX);
-        editModelRotationYSpinnerValue.setValue(rotationY);
-        editModelRotationZSpinnerValue.setValue(rotationZ); */
-
-
-        // todo !!! ВАЖНО !!!
-        // todo переменные scale должны быть double
-        // todo и быть множителями масштабирования (0 < scale < 1 - если модель уменьшалась)
-
-        // todo считывание переменных scale из модели и вывод в форму
-
-        /* editModelScalingXSpinnerValue.setValue(scaleX);
-        editModelScalingYSpinnerValue.setValue(scaleY);
-        editModelScalingZSpinnerValue.setValue(scaleZ); */
-
-        // todo !!! ВАЖНО !!!
-        // todo как сделаешь вышеописанное - удали строки 1078 - 1084
-        // todo сейчас они используются чисто для того, чтобы в форме хоть что-то было в соответствующих графах
-
         editModelRotationXSpinnerValue.setValue(0.0);
         editModelRotationYSpinnerValue.setValue(0.0);
         editModelRotationZSpinnerValue.setValue(0.0);

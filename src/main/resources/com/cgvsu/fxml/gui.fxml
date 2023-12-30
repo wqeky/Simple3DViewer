@@ -1,54 +1,304 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.canvas.Canvas?>
 
-<AnchorPane fx:id="anchorPane" xmlns:fx="http://javafx.com/fxml" fx:controller="com.cgvsu.GuiController">
-    <MenuBar>
-        <Menu mnemonicParsing="false" text="File">
-            <MenuItem mnemonicParsing="false" onAction="#onOpenModelMenuItemClick" text="Load Model">
-            <accelerator>
-                <KeyCodeCombination alt="UP" control="DOWN" meta="UP" shift="UP" shortcut="UP" code="F"/>
-            </accelerator>
+<AnchorPane fx:id="anchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cgvsu.GuiController">
+
+    <Canvas fx:id="canvas" height="870" width="1600" AnchorPane.topAnchor="0.0" />
+    <MenuBar prefHeight="25.0" prefWidth="300.0">
+        <Menu mnemonicParsing="false" text="File Options">
+            <MenuItem mnemonicParsing="false" onAction="#loadModelFromFile" text="Load Model">
+                <accelerator>
+                    <KeyCodeCombination alt="UP" code="F" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                </accelerator>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false" onAction="#loadTextureFromFile" text="Load Texture">
+                <accelerator>
+                    <KeyCodeCombination alt="UP" code="G" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                </accelerator></MenuItem>
+            <MenuItem mnemonicParsing="false" onAction="#saveModelToFile" text="Save Model">
+                <accelerator>
+                    <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                </accelerator>
             </MenuItem>
         </Menu>
         <Menu mnemonicParsing="false" text="Camera Options">
             <MenuItem mnemonicParsing="false" onAction="#handleCameraForward" text="Forward">
                 <accelerator>
-                    <KeyCodeCombination alt="UP" control="UP" meta="UP" shift="UP" shortcut="UP" code="UP"/>
+                    <KeyCodeCombination alt="UP" code="E" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
                 </accelerator>
             </MenuItem>
             <MenuItem mnemonicParsing="false" onAction="#handleCameraBackward" text="Backward">
                 <accelerator>
-                    <KeyCodeCombination alt="UP" control="UP" meta="UP" shift="UP" shortcut="UP" code="DOWN"/>
+                    <KeyCodeCombination alt="UP" code="Q" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
                 </accelerator>
             </MenuItem>
             <MenuItem mnemonicParsing="false" onAction="#handleCameraLeft" text="Left">
                 <accelerator>
-                    <KeyCodeCombination alt="UP" control="UP" meta="UP" shift="UP" shortcut="UP" code="LEFT"/>
+                    <KeyCodeCombination alt="UP" code="A" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
                 </accelerator>
             </MenuItem>
             <MenuItem mnemonicParsing="false" onAction="#handleCameraRight" text="Right">
                 <accelerator>
-                    <KeyCodeCombination alt="UP" control="UP" meta="UP" shift="UP" shortcut="UP" code="RIGHT"/>
+                    <KeyCodeCombination alt="UP" code="D" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
                 </accelerator>
             </MenuItem>
             <MenuItem mnemonicParsing="false" onAction="#handleCameraUp" text="Up">
                 <accelerator>
-                    <KeyCodeCombination alt="UP" control="UP" meta="UP" shift="UP" shortcut="UP" code="W"/>
+                    <KeyCodeCombination alt="UP" code="W" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
                 </accelerator>
             </MenuItem>
             <MenuItem mnemonicParsing="false" onAction="#handleCameraDown" text="Down">
                 <accelerator>
-                    <KeyCodeCombination alt="UP" control="UP" meta="UP" shift="UP" shortcut="UP" code="S"/>
+                    <KeyCodeCombination alt="UP" code="S" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                </accelerator>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false" onAction="#handleCameraViewForward" text="View Forward">
+                <accelerator>
+                    <KeyCodeCombination alt="UP" code="E" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                </accelerator>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false" onAction="#handleCameraViewBackward" text="View Backward">
+                <accelerator>
+                    <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                </accelerator>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false" onAction="#handleCameraViewLeft" text="View Left">
+                <accelerator>
+                    <KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                </accelerator>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false" onAction="#handleCameraViewRight" text="View Right">
+                <accelerator>
+                    <KeyCodeCombination alt="UP" code="D" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                </accelerator>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false" onAction="#handleCameraViewUp" text="View Up">
+                <accelerator>
+                    <KeyCodeCombination alt="UP" code="W" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                </accelerator>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false" onAction="#handleCameraViewDown" text="View Down">
+                <accelerator>
+                    <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
                 </accelerator>
             </MenuItem>
         </Menu>
+        <Menu mnemonicParsing="false" text="Model Options">
+            <items>
+                <MenuItem mnemonicParsing="false" onAction="#handleModelForward" text="Forward">
+                    <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="E" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#handleModelBackward" text="Backward">
+                    <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="Q" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#handleModelLeft" text="Left">
+                    <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="A" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#handleModelRight" text="Right">
+                    <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="D" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#handleModelUp" text="Up">
+                    <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="W" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#handleModelDown" text="Down">
+                    <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="S" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#rotateModelForward" text="Rotate Forward">
+                    <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="E" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#rotateModelBackward" text="Rotate Backward">
+                    <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#rotateModelLeft" text="Rotate Left">
+                    <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="A" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#rotateModelRight" text="Rotate Right">
+                    <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="D" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#rotateModelUp" text="Rotate Up">
+                    <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="W" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#rotateModelDown" text="Rotate Down">
+                    <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#scaleModelForward" text="Scale Forward">
+                    <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="E" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#scaleModelBackward" text="Scale Backward">
+                    <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="Q" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#scaleModelLeft" text="Scale Left">
+                    <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="A" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#scaleModelRight" text="Scale Right">
+                    <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="D" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#scaleModelUp" text="Scale Up">
+                    <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="W" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#scaleModelDown" text="Scale Down">
+                    <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="S" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                    </accelerator>
+                </MenuItem>
+            </items>
+        </Menu>
     </MenuBar>
-
-    <Canvas fx:id="canvas" width="1600" height="870" AnchorPane.topAnchor="30.0"/>
+    <TitledPane alignment="CENTER" animated="false" layoutX="420.0" prefHeight="645.0" prefWidth="280.0" text="Edit Model">
+        <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <children>
+                    <Label alignment="CENTER" layoutX="50.0" layoutY="25.0" prefHeight="30.0" prefWidth="30.0" text="X" />
+                    <Label alignment="CENTER" layoutX="50.0" layoutY="65.0" prefHeight="30.0" prefWidth="30.0" text="Y" />
+                    <Label alignment="CENTER" layoutX="50.0" layoutY="105.0" prefHeight="30.0" prefWidth="30.0" text="Z" />
+                    <Spinner fx:id="editModelTransitionXSpinner" editable="true" layoutX="80.0" layoutY="28.0" prefHeight="25.0" prefWidth="140.0" />
+                    <Spinner fx:id="editModelTransitionYSpinner" editable="true" layoutX="80.0" layoutY="68.0" prefHeight="25.0" prefWidth="140.0" />
+                    <Spinner fx:id="editModelTransitionZSpinner" editable="true" layoutX="80.0" layoutY="108.0" prefHeight="25.0" prefWidth="140.0" />
+                    <Label alignment="CENTER" layoutX="50.0" layoutY="160.0" prefHeight="30.0" prefWidth="30.0" text="X" />
+                    <Label alignment="CENTER" layoutX="50.0" layoutY="200.0" prefHeight="30.0" prefWidth="30.0" text="Y" />
+                    <Label alignment="CENTER" layoutX="50.0" layoutY="240.0" prefHeight="30.0" prefWidth="30.0" text="Z" />
+                    <Spinner fx:id="editModelRotationXSpinner" editable="true" layoutX="80.0" layoutY="163.0" prefHeight="25.0" prefWidth="140.0" />
+                    <Spinner fx:id="editModelRotationYSpinner" editable="true" layoutX="80.0" layoutY="203.0" prefHeight="25.0" prefWidth="140.0" />
+                    <Spinner fx:id="editModelRotationZSpinner" editable="true" layoutX="80.0" layoutY="243.0" prefHeight="25.0" prefWidth="140.0" />
+                    <Label alignment="CENTER" layoutX="50.0" layoutY="295.0" prefHeight="30.0" prefWidth="30.0" text="X" />
+                    <Label alignment="CENTER" layoutX="50.0" layoutY="335.0" prefHeight="30.0" prefWidth="30.0" text="Y" />
+                    <Label alignment="CENTER" layoutX="50.0" layoutY="375.0" prefHeight="30.0" prefWidth="30.0" text="Z" />
+                    <Spinner fx:id="editModelScalingXSpinner" editable="true" layoutX="80.0" layoutY="298.0" prefHeight="25.0" prefWidth="140.0" />
+                    <Spinner fx:id="editModelScalingYSpinner" editable="true" layoutX="80.0" layoutY="338.0" prefHeight="25.0" prefWidth="140.0" />
+                    <Spinner fx:id="editModelScalingZSpinner" editable="true" layoutX="80.0" layoutY="378.0" prefHeight="25.0" prefWidth="140.0" />
+                    <Label alignment="CENTER" layoutX="90.0" prefHeight="25.0" prefWidth="100.0" text="Transition" />
+                    <Label alignment="CENTER" layoutX="90.0" layoutY="135.0" prefHeight="25.0" prefWidth="100.0" text="Rotation" />
+                    <Label alignment="CENTER" layoutX="90.0" layoutY="270.0" prefHeight="25.0" prefWidth="100.0" text="Scaling" />
+                    <Button alignment="CENTER" layoutX="25.0" layoutY="545.0" mnemonicParsing="false" onAction="#deleteModel" prefHeight="25.0" prefWidth="100.0" text="Delete Model" />
+                    <Button alignment="CENTER" layoutX="155.0" layoutY="545.0" mnemonicParsing="false" onAction="#applyModelChanges" prefHeight="25.0" prefWidth="100.0" text="Apply Changes" />
+                    <CheckBox fx:id="drawModelCheckBox" alignment="CENTER" layoutX="15.0" layoutY="415.0" mnemonicParsing="false" text="Draw Model" />
+                    <CheckBox fx:id="drawPolygonMeshCheckBox" alignment="CENTER" layoutX="140.0" layoutY="415.0" mnemonicParsing="false" text="Draw Polygon Mesh" />
+                    <CheckBox fx:id="drawColorFillingCheckBox" alignment="CENTER" layoutX="15.0" layoutY="445.0" mnemonicParsing="false" text="Draw Color Fillng" />
+                    <CheckBox fx:id="drawLightingCheckBox" alignment="CENTER" layoutX="15.0" layoutY="505.0" mnemonicParsing="false" text="Draw Lighting" />
+                    <CheckBox fx:id="drawTextureCheckBox" alignment="CENTER" layoutX="15.0" layoutY="475.0" mnemonicParsing="false" text="Draw Texture" />
+                    <CheckBox fx:id="saveWithChangesCheckBox" alignment="CENTER" layoutX="140.0" layoutY="505.0" mnemonicParsing="false" text="Save with Changes" />
+                    <ColorPicker fx:id="drawColorFillingColorPicker" layoutX="140.0" layoutY="441.0" />
+                    <ChoiceBox fx:id="drawTextureChoiceBox" layoutX="140.0" layoutY="471.0" prefHeight="25.0" prefWidth="125.0" />
+                    <Button alignment="CENTER" layoutX="90.0" layoutY="580.0" mnemonicParsing="false" onAction="#resetModel" prefHeight="25.0" prefWidth="100.0" text="Reset Model" />
+                </children>
+            </AnchorPane>
+        </content>
+    </TitledPane>
+    <TitledPane alignment="CENTER" animated="false" layoutX="700.0" prefHeight="390.0" prefWidth="280.0" text="Edit Camera">
+        <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="401.0" prefWidth="278.0">
+                <children>
+                    <Label alignment="CENTER" layoutX="50.0" layoutY="25.0" prefHeight="30.0" prefWidth="30.0" text="X" />
+                    <Label alignment="CENTER" layoutX="50.0" layoutY="65.0" prefHeight="30.0" prefWidth="30.0" text="Y" />
+                    <Label alignment="CENTER" layoutX="50.0" layoutY="105.0" prefHeight="30.0" prefWidth="30.0" text="Z" />
+                    <Spinner fx:id="editCameraTransitionXSpinner" editable="true" layoutX="80.0" layoutY="28.0" prefHeight="25.0" prefWidth="140.0" />
+                    <Spinner fx:id="editCameraTransitionYSpinner" editable="true" layoutX="80.0" layoutY="68.0" prefHeight="25.0" prefWidth="140.0" />
+                    <Spinner fx:id="editCameraTransitionZSpinner" editable="true" layoutX="80.0" layoutY="108.0" prefHeight="25.0" prefWidth="140.0" />
+                    <Label alignment="CENTER" layoutX="50.0" layoutY="160.0" prefHeight="30.0" prefWidth="30.0" text="X" />
+                    <Label alignment="CENTER" layoutX="50.0" layoutY="200.0" prefHeight="30.0" prefWidth="30.0" text="Y" />
+                    <Label alignment="CENTER" layoutX="50.0" layoutY="240.0" prefHeight="30.0" prefWidth="30.0" text="Z" />
+                    <Spinner fx:id="editCameraViewTransitionXSpinner" editable="true" layoutX="80.0" layoutY="163.0" prefHeight="25.0" prefWidth="140.0" />
+                    <Spinner fx:id="editCameraViewTransitionYSpinner" editable="true" layoutX="80.0" layoutY="203.0" prefHeight="25.0" prefWidth="140.0" />
+                    <Spinner fx:id="editCameraViewTransitionZSpinner" editable="true" layoutX="80.0" layoutY="243.0" prefHeight="25.0" prefWidth="140.0" />
+                    <Label alignment="CENTER" layoutX="90.0" prefHeight="25.0" prefWidth="100.0" text="Position" />
+                    <Label alignment="CENTER" layoutX="70.0" layoutY="135.0" prefHeight="25.0" prefWidth="140.0" text="Target Position" />
+                    <Button alignment="CENTER" layoutX="25.0" layoutY="290.0" mnemonicParsing="false" onAction="#deleteCamera" prefHeight="25.0" prefWidth="100.0" text="Delete Camera" />
+                    <Button alignment="CENTER" layoutX="155.0" layoutY="290.0" mnemonicParsing="false" onAction="#applyCameraChanges" prefHeight="25.0" prefWidth="100.0" text="Apply Changes" />
+                    <Button alignment="CENTER" layoutX="90.0" layoutY="325.0" mnemonicParsing="false" onAction="#resetCamera" prefHeight="25.0" prefWidth="100.0" text="Reset Camera" />
+                </children>
+            </AnchorPane>
+        </content>
+    </TitledPane>
+    <TitledPane alignment="CENTER" animated="false" layoutX="980.0" prefHeight="390.0" prefWidth="280.0" text="Create Camera">
+        <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="401.0" prefWidth="278.0">
+                <children>
+                    <Label alignment="CENTER" layoutX="50.0" layoutY="25.0" prefHeight="30.0" prefWidth="30.0" text="X" />
+                    <Label alignment="CENTER" layoutX="50.0" layoutY="65.0" prefHeight="30.0" prefWidth="30.0" text="Y" />
+                    <Label alignment="CENTER" layoutX="50.0" layoutY="105.0" prefHeight="30.0" prefWidth="30.0" text="Z" />
+                    <Spinner fx:id="createCameraTransitionXSpinner" editable="true" layoutX="80.0" layoutY="28.0" prefHeight="25.0" prefWidth="140.0" />
+                    <Spinner fx:id="createCameraTransitionYSpinner" editable="true" layoutX="80.0" layoutY="68.0" prefHeight="25.0" prefWidth="140.0" />
+                    <Spinner fx:id="createCameraTransitionZSpinner" editable="true" layoutX="80.0" layoutY="108.0" prefHeight="25.0" prefWidth="140.0" />
+                    <Label alignment="CENTER" layoutX="50.0" layoutY="160.0" prefHeight="30.0" prefWidth="30.0" text="X" />
+                    <Label alignment="CENTER" layoutX="50.0" layoutY="200.0" prefHeight="30.0" prefWidth="30.0" text="Y" />
+                    <Label alignment="CENTER" layoutX="50.0" layoutY="240.0" prefHeight="30.0" prefWidth="30.0" text="Z" />
+                    <Spinner fx:id="createCameraViewTransitionXSpinner" editable="true" layoutX="80.0" layoutY="163.0" prefHeight="25.0" prefWidth="140.0" />
+                    <Spinner fx:id="createCameraViewTransitionYSpinner" editable="true" layoutX="80.0" layoutY="203.0" prefHeight="25.0" prefWidth="140.0" />
+                    <Spinner fx:id="createCameraViewTransitionZSpinner" editable="true" layoutX="80.0" layoutY="243.0" prefHeight="25.0" prefWidth="140.0" />
+                    <Label alignment="CENTER" layoutX="90.0" prefHeight="25.0" prefWidth="100.0" text="Position" />
+                    <Label alignment="CENTER" layoutX="70.0" layoutY="135.0" prefHeight="25.0" prefWidth="140.0" text="Target Position" />
+                    <Button alignment="CENTER" layoutX="89.0" layoutY="325.0" mnemonicParsing="false" onAction="#createCamera" prefHeight="25.0" prefWidth="100.0" text="Create Camera" />
+                    <TextField fx:id="cameraNameTextField" alignment="CENTER" layoutX="60.0" layoutY="280.0" prefHeight="25.0" prefWidth="160.0" promptText="Camera Name" />
+                </children>
+            </AnchorPane>
+        </content>
+    </TitledPane>
+    <TitledPane alignment="CENTER" animated="false" layoutY="25.0" prefHeight="325.0" prefWidth="150.0" text="Models">
+        <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="372.0" prefWidth="254.0">
+                <children>
+                    <ListView fx:id="ModelsListView" layoutX="-1.0" prefHeight="300.0" prefWidth="150.0" />
+                </children>
+            </AnchorPane>
+        </content>
+    </TitledPane>
+    <TitledPane alignment="CENTER" animated="false" layoutX="150.0" layoutY="25.0" prefHeight="325.0" prefWidth="150.0" text="Cameras">
+        <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="372.0" prefWidth="254.0">
+                <children>
+                    <ListView fx:id="CamerasListView" prefHeight="300.0" prefWidth="150.0" />
+                </children>
+            </AnchorPane>
+        </content>
+    </TitledPane>
+    <ColorPicker fx:id="sceneColorPicker" layoutX="300.0" onAction="#changeBackgroundColor" prefHeight="25.0" prefWidth="120.0" />
 </AnchorPane>

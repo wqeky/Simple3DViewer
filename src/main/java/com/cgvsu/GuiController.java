@@ -404,16 +404,7 @@ public class GuiController {
 
     @FXML
     private void handleModelForward() { // перемещение модели -Z
-        // старые сообщения моему коллеге (он так и не сделал перемещение, пришлось самому)
-        // todo !!! ЕСЛИ ТЫ СДЕЛАЛ ПЕРЕМЕЩЕНИЕ !!!
-        // todo тогда измени эту функцию по шаблону из функций поворота и масштабирования
-        // todo да, сейчас эта функция выглядит не по-шаблону, а всё потому, что я вынес всю логику из неё в другую функцию
-        // todo ибо Косенко сказал, так правильнее и опрятнее
-        // todo но ты не вздумай делать так же, у тебя и так мало времени + в процессе разделения этой функции ты можешь накосячить
-        // todo и на зачёте всплывёт неприятный неожиданный баг
 
-        // todo !!! ЕСЛИ ТЫ НЕ СДЕЛАЛ ПЕРЕМЕЩЕНИЕ !!!
-        // todo ты лох
 
         try {
             ModelOnScene modelOnScene = handleModel(ModelsListView.getSelectionModel().getSelectedIndices(), new Vector3f(0, 0, -TRANSLATION));
@@ -425,16 +416,7 @@ public class GuiController {
 
     @FXML
     private void handleModelBackward() { // перемещение модели Z
-        // старые сообщения моему коллеге (он так и не сделал перемещение, пришлось самому)
-        // todo !!! ЕСЛИ ТЫ СДЕЛАЛ ПЕРЕМЕЩЕНИЕ !!!
-        // todo тогда измени эту функцию по шаблону из функций поворота и масштабирования
-        // todo да, сейчас эта функция выглядит не по-шаблону, а всё потому, что я вынес всю логику из неё в другую функцию
-        // todo ибо Косенко сказал, так правильнее и опрятнее
-        // todo но ты не вздумай делать так же, у тебя и так мало времени + в процессе разделения этой функции ты можешь накосячить
-        // todo и на зачёте всплывёт неприятный неожиданный баг
 
-        // todo !!! ЕСЛИ ТЫ НЕ СДЕЛАЛ ПЕРЕМЕЩЕНИЕ !!!
-        // todo ты лох
 
         try {
             ModelOnScene modelOnScene = handleModel(ModelsListView.getSelectionModel().getSelectedIndices(), new Vector3f(0, 0, TRANSLATION));
@@ -446,16 +428,6 @@ public class GuiController {
 
     @FXML
     private void handleModelLeft() { // перемещение модели X
-        // старые сообщения моему коллеге (он так и не сделал перемещение, пришлось самому)
-        // todo !!! ЕСЛИ ТЫ СДЕЛАЛ ПЕРЕМЕЩЕНИЕ !!!
-        // todo тогда измени эту функцию по шаблону из функций поворота и масштабирования
-        // todo да, сейчас эта функция выглядит не по-шаблону, а всё потому, что я вынес всю логику из неё в другую функцию
-        // todo ибо Косенко сказал, так правильнее и опрятнее
-        // todo но ты не вздумай делать так же, у тебя и так мало времени + в процессе разделения этой функции ты можешь накосячить
-        // todo и на зачёте всплывёт неприятный неожиданный баг
-
-        // todo !!! ЕСЛИ ТЫ НЕ СДЕЛАЛ ПЕРЕМЕЩЕНИЕ !!!
-        // todo ты лох
 
         try {
             ModelOnScene modelOnScene = handleModel(ModelsListView.getSelectionModel().getSelectedIndices(), new Vector3f(TRANSLATION, 0, 0));
@@ -467,16 +439,7 @@ public class GuiController {
 
     @FXML
     private void handleModelRight() { // перемещение модели -X
-        // старые сообщения моему коллеге (он так и не сделал перемещение, пришлось самому)
-        // todo !!! ЕСЛИ ТЫ СДЕЛАЛ ПЕРЕМЕЩЕНИЕ !!!
-        // todo тогда измени эту функцию по шаблону из функций поворота и масштабирования
-        // todo да, сейчас эта функция выглядит не по-шаблону, а всё потому, что я вынес всю логику из неё в другую функцию
-        // todo ибо Косенко сказал, так правильнее и опрятнее
-        // todo но ты не вздумай делать так же, у тебя и так мало времени + в процессе разделения этой функции ты можешь накосячить
-        // todo и на зачёте всплывёт неприятный неожиданный баг
 
-        // todo !!! ЕСЛИ ТЫ НЕ СДЕЛАЛ ПЕРЕМЕЩЕНИЕ !!!
-        // todo ты лох
 
         try {
             ModelOnScene modelOnScene = handleModel(ModelsListView.getSelectionModel().getSelectedIndices(), new Vector3f(-TRANSLATION, 0, 0));
@@ -488,16 +451,6 @@ public class GuiController {
 
     @FXML
     private void handleModelUp() { // перемещение модели Y
-        // старые сообщения моему коллеге (он так и не сделал перемещение, пришлось самому)
-        // todo !!! ЕСЛИ ТЫ СДЕЛАЛ ПЕРЕМЕЩЕНИЕ !!!
-        // todo тогда измени эту функцию по шаблону из функций поворота и масштабирования
-        // todo да, сейчас эта функция выглядит не по-шаблону, а всё потому, что я вынес всю логику из неё в другую функцию
-        // todo ибо Косенко сказал, так правильнее и опрятнее
-        // todo но ты не вздумай делать так же, у тебя и так мало времени + в процессе разделения этой функции ты можешь накосячить
-        // todo и на зачёте всплывёт неприятный неожиданный баг
-
-        // todo !!! ЕСЛИ ТЫ НЕ СДЕЛАЛ ПЕРЕМЕЩЕНИЕ !!!
-        // todo ты лох
 
         try {
             ModelOnScene modelOnScene = handleModel(ModelsListView.getSelectionModel().getSelectedIndices(), new Vector3f(0, TRANSLATION, 0));
@@ -509,16 +462,6 @@ public class GuiController {
 
     @FXML
     private void handleModelDown() { // перемещение модели -Y
-        // старые сообщения моему коллеге (он так и не сделал перемещение, пришлось самому)
-        // todo !!! ЕСЛИ ТЫ СДЕЛАЛ ПЕРЕМЕЩЕНИЕ !!!
-        // todo тогда измени эту функцию по шаблону из функций поворота и масштабирования
-        // todo да, сейчас эта функция выглядит не по-шаблону, а всё потому, что я вынес всю логику из неё в другую функцию
-        // todo ибо Косенко сказал, так правильнее и опрятнее
-        // todo но ты не вздумай делать так же, у тебя и так мало времени + в процессе разделения этой функции ты можешь накосячить
-        // todo и на зачёте всплывёт неприятный неожиданный баг
-
-        // todo !!! ЕСЛИ ТЫ НЕ СДЕЛАЛ ПЕРЕМЕЩЕНИЕ !!!
-        // todo ты лох
 
         try {
             ModelOnScene modelOnScene = handleModel(ModelsListView.getSelectionModel().getSelectedIndices(), new Vector3f(0, -TRANSLATION, 0));
@@ -530,10 +473,6 @@ public class GuiController {
 
     @FXML
     private void rotateModelForward() { // поворот модели вокруг оси Z по часовой стрелке
-        // старые сообщения моему коллеге (он так и не сделал перемещение, пришлось самому)
-        // todo !!! ВАЖНО !!!
-        // todo я уже привязал эту функцию к клавишам и форме в интерфейсе
-        // todo поэтому от тебя требуется только следовать моим инструкциям ниже
 
         List<Integer> selectedModelsIndicesList = ModelsListView.getSelectionModel().getSelectedIndices(); // todo список индексов выбранных моделей
 
@@ -545,8 +484,7 @@ public class GuiController {
             List<ModelOnScene> selectedModelsOnSceneList = getSelectedModelsOnScene(selectedModelsIndicesList); // todo список выбранных моделей
 
             for (ModelOnScene modelOnScene : selectedModelsOnSceneList) { // todo для каждой модели из списка выбранных моделей
-                // todo  !!! ПОВОРОТ МОДЕЛИ ВОКРУГ ОСИ Z ПО ЧАСОВОЙ СТРЕЛКЕ !!!
-                // todo  !!! ЖЕЛАТЕЛЬНО ПЕРЕДАВАТЬ НЕБОЛЬШОЕ ЗНАЧЕНИЕ ПОВОРОТА (ПЕРЕМЕННАЯ TRANSITION ИЗ КЛАССА SCENE НАПРИМЕР) !!!
+
             }
 
             if (selectedModelsIndicesList.size() == 1) { // todo если была выбрана одна модель
@@ -557,10 +495,6 @@ public class GuiController {
 
     @FXML
     private void rotateModelBackward() { // поворот модели вокруг оси Z против часовой стрелки
-        // старые сообщения моему коллеге (он так и не сделал поворот)
-        // todo !!! ВАЖНО !!!
-        // todo я уже привязал эту функцию к клавишам и форме в интерфейсе
-        // todo поэтому от тебя требуется только следовать моим инструкциям ниже
 
         List<Integer> selectedModelsIndicesList = ModelsListView.getSelectionModel().getSelectedIndices(); // todo список индексов выбранных моделей
 
@@ -576,8 +510,8 @@ public class GuiController {
                 // todo  !!! ЖЕЛАТЕЛЬНО ПЕРЕДАВАТЬ НЕБОЛЬШОЕ ЗНАЧЕНИЕ ПОВОРОТА (ПЕРЕМЕННАЯ TRANSITION ИЗ КЛАССА SCENE НАПРИМЕР) !!!
             }
 
-            if (selectedModelsIndicesList.size() == 1) { // todo если была выбрана одна модель
-                setActualEditModelTitledPane(selectedModelsOnSceneList.get(0)); // todo вывод актуальной информации о выбранной модели в форму
+            if (selectedModelsIndicesList.size() == 1) {
+                setActualEditModelTitledPane(selectedModelsOnSceneList.get(0));
             }
         }
     }
@@ -599,8 +533,7 @@ public class GuiController {
             List<ModelOnScene> selectedModelsOnSceneList = getSelectedModelsOnScene(selectedModelsIndicesList); // todo список выбранных моделей
 
             for (ModelOnScene modelOnScene : selectedModelsOnSceneList) { // todo для каждой модели из списка выбранных моделей
-                // todo  !!! ПОВОРОТ МОДЕЛИ ВОКРУГ ОСИ X ПРОТИВ ЧАСОВОЙ СТРЕЛКИ !!!
-                // todo  !!! ЖЕЛАТЕЛЬНО ПЕРЕДАВАТЬ НЕБОЛЬШОЕ ЗНАЧЕНИЕ ПОВОРОТА (ПЕРЕМЕННАЯ TRANSITION ИЗ КЛАССА SCENE НАПРИМЕР) !!!
+
             }
 
             if (selectedModelsIndicesList.size() == 1) { // todo если была выбрана одна модель
@@ -611,10 +544,7 @@ public class GuiController {
 
     @FXML
     private void rotateModelRight() { // поворот модели вокруг оси X по часовой стрелке
-        // старые сообщения моему коллеге (он так и не сделал поворот)
-        // todo !!! ВАЖНО !!!
-        // todo я уже привязал эту функцию к клавишам и форме в интерфейсе
-        // todo поэтому от тебя требуется только следовать моим инструкциям ниже
+
 
         List<Integer> selectedModelsIndicesList = ModelsListView.getSelectionModel().getSelectedIndices(); // todo список индексов выбранных моделей
 
@@ -626,8 +556,7 @@ public class GuiController {
             List<ModelOnScene> selectedModelsOnSceneList = getSelectedModelsOnScene(selectedModelsIndicesList); // todo список выбранных моделей
 
             for (ModelOnScene modelOnScene : selectedModelsOnSceneList) { // todo для каждой модели из списка выбранных моделей
-                // todo  !!! ПОВОРОТ МОДЕЛИ ВОКРУГ ОСИ X ПО ЧАСОВОЙ СТРЕЛКЕ !!!
-                // todo  !!! ЖЕЛАТЕЛЬНО ПЕРЕДАВАТЬ НЕБОЛЬШОЕ ЗНАЧЕНИЕ ПОВОРОТА (ПЕРЕМЕННАЯ TRANSITION ИЗ КЛАССА SCENE НАПРИМЕР) !!!
+
             }
 
             if (selectedModelsIndicesList.size() == 1) { // todo если была выбрана одна модель
@@ -638,10 +567,6 @@ public class GuiController {
 
     @FXML
     private void rotateModelUp() { // поворот модели вокруг оси Y по часовой стрелке
-        // старые сообщения моему коллеге (он так и не сделал поворот)
-        // todo !!! ВАЖНО !!!
-        // todo я уже привязал эту функцию к клавишам и форме в интерфейсе
-        // todo поэтому от тебя требуется только следовать моим инструкциям ниже
 
         List<Integer> selectedModelsIndicesList = ModelsListView.getSelectionModel().getSelectedIndices(); // todo список индексов выбранных моделей
 
@@ -653,8 +578,7 @@ public class GuiController {
             List<ModelOnScene> selectedModelsOnSceneList = getSelectedModelsOnScene(selectedModelsIndicesList); // todo список выбранных моделей
 
             for (ModelOnScene modelOnScene : selectedModelsOnSceneList) { // todo для каждой модели из списка выбранных моделей
-                // todo  !!! ПОВОРОТ МОДЕЛИ ВОКРУГ ОСИ Y ПО ЧАСОВОЙ СТРЕЛКЕ !!!
-                // todo  !!! ЖЕЛАТЕЛЬНО ПЕРЕДАВАТЬ НЕБОЛЬШОЕ ЗНАЧЕНИЕ ПОВОРОТА (ПЕРЕМЕННАЯ TRANSITION ИЗ КЛАССА SCENE НАПРИМЕР) !!!
+
             }
 
             if (selectedModelsIndicesList.size() == 1) { // todo если была выбрана одна модель
@@ -665,10 +589,7 @@ public class GuiController {
 
     @FXML
     private void rotateModelDown() { // поворот модели вокруг оси Y против часовой стрелки
-        // старые сообщения моему коллеге (он так и не сделал поворот)
-        // todo !!! ВАЖНО !!!
-        // todo я уже привязал эту функцию к клавишам и форме в интерфейсе
-        // todo поэтому от тебя требуется только следовать моим инструкциям ниже
+
 
         List<Integer> selectedModelsIndicesList = ModelsListView.getSelectionModel().getSelectedIndices(); // todo список индексов выбранных моделей
 
@@ -680,8 +601,6 @@ public class GuiController {
             List<ModelOnScene> selectedModelsOnSceneList = getSelectedModelsOnScene(selectedModelsIndicesList); // todo список выбранных моделей
 
             for (ModelOnScene modelOnScene : selectedModelsOnSceneList) { // todo для каждой модели из списка выбранных моделей
-                // todo  !!! ПОВОРОТ МОДЕЛИ ВОКРУГ ОСИ Y ПРОТИВ ЧАСОВОЙ СТРЕЛКИ !!!
-                // todo  !!! ЖЕЛАТЕЛЬНО ПЕРЕДАВАТЬ НЕБОЛЬШОЕ ЗНАЧЕНИЕ ПОВОРОТА (ПЕРЕМЕННАЯ TRANSITION ИЗ КЛАССА SCENE НАПРИМЕР) !!!
             }
 
             if (selectedModelsIndicesList.size() == 1) { // todo если была выбрана одна модель
@@ -692,10 +611,6 @@ public class GuiController {
 
     @FXML
     private void scaleModelForward() { // увеличение модели вдоль оси Z
-        // старые сообщения моему коллеге (он так и не сделал масштабирование)
-        // todo !!! ВАЖНО !!!
-        // todo я уже привязал эту функцию к клавишам и форме в интерфейсе
-        // todo поэтому от тебя требуется только следовать моим инструкциям ниже
 
         List<Integer> selectedModelsIndicesList = ModelsListView.getSelectionModel().getSelectedIndices(); // todo список индексов выбранных моделей
 
@@ -707,8 +622,7 @@ public class GuiController {
             List<ModelOnScene> selectedModelsOnSceneList = getSelectedModelsOnScene(selectedModelsIndicesList); // todo список выбранных моделей
 
             for (ModelOnScene modelOnScene : selectedModelsOnSceneList) { // todo для каждой модели из списка выбранных моделей
-                // todo  !!! МАСШТАБИРОВАНИЕ МОДЕЛИ ВДОЛЬ ОСИ Z (УВЕЛИЧЕНИЕ) !!!
-                // todo  !!! ЖЕЛАТЕЛЬНО ПЕРЕДАВАТЬ НЕБОЛЬШОЕ ЗНАЧЕНИЕ МАСШТАБИРОВАНИЯ (ПЕРЕМЕННАЯ TRANSITION ИЗ КЛАССА SCENE НАПРИМЕР) !!!
+
             }
 
             if (selectedModelsIndicesList.size() == 1) { // todo если была выбрана одна модель
@@ -719,10 +633,7 @@ public class GuiController {
 
     @FXML
     private void scaleModelBackward() { // уменьшение модели вдоль оси Z
-        // старые сообщения моему коллеге (он так и не сделал масштабирование)
-        // todo !!! ВАЖНО !!!
-        // todo я уже привязал эту функцию к клавишам и форме в интерфейсе
-        // todo поэтому от тебя требуется только следовать моим инструкциям ниже
+
 
         List<Integer> selectedModelsIndicesList = ModelsListView.getSelectionModel().getSelectedIndices(); // todo список индексов выбранных моделей
 
@@ -734,8 +645,7 @@ public class GuiController {
             List<ModelOnScene> selectedModelsOnSceneList = getSelectedModelsOnScene(selectedModelsIndicesList); // todo список выбранных моделей
 
             for (ModelOnScene modelOnScene : selectedModelsOnSceneList) { // todo для каждой модели из списка выбранных моделей
-                // todo  !!! МАСШТАБИРОВАНИЕ МОДЕЛИ ВДОЛЬ ОСИ Z (УМЕНЬШЕНИЕ) !!!
-                // todo  !!! ЖЕЛАТЕЛЬНО ПЕРЕДАВАТЬ НЕБОЛЬШОЕ ЗНАЧЕНИЕ МАСШТАБИРОВАНИЯ (ПЕРЕМЕННАЯ TRANSITION ИЗ КЛАССА SCENE НАПРИМЕР) !!!
+
             }
 
             if (selectedModelsIndicesList.size() == 1) { // todo если была выбрана одна модель
@@ -746,10 +656,7 @@ public class GuiController {
 
     @FXML
     private void scaleModelLeft() { // уменьшение модели вдоль оси X
-        // старые сообщения моему коллеге (он так и не сделал масштабирование)
-        // todo !!! ВАЖНО !!!
-        // todo я уже привязал эту функцию к клавишам и форме в интерфейсе
-        // todo поэтому от тебя требуется только следовать моим инструкциям ниже
+
 
         List<Integer> selectedModelsIndicesList = ModelsListView.getSelectionModel().getSelectedIndices(); // todo список индексов выбранных моделей
 
@@ -773,10 +680,7 @@ public class GuiController {
 
     @FXML
     private void scaleModelRight() { // увеличение модели вдоль оси X
-        // старые сообщения моему коллеге (он так и не сделал масштабирование)
-        // todo !!! ВАЖНО !!!
-        // todo я уже привязал эту функцию к клавишам и форме в интерфейсе
-        // todo поэтому от тебя требуется только следовать моим инструкциям ниже
+
 
         List<Integer> selectedModelsIndicesList = ModelsListView.getSelectionModel().getSelectedIndices(); // todo список индексов выбранных моделей
 
@@ -800,10 +704,7 @@ public class GuiController {
 
     @FXML
     private void scaleModelUp() { // увеличение модели вдоль оси Y
-        // старые сообщения моему коллеге (он так и не сделал масштабирование)
-        // todo !!! ВАЖНО !!!
-        // todo я уже привязал эту функцию к клавишам и форме в интерфейсе
-        // todo поэтому от тебя требуется только следовать моим инструкциям ниже
+
 
         List<Integer> selectedModelsIndicesList = ModelsListView.getSelectionModel().getSelectedIndices(); // todo список индексов выбранных моделей
 
@@ -815,8 +716,7 @@ public class GuiController {
             List<ModelOnScene> selectedModelsOnSceneList = getSelectedModelsOnScene(selectedModelsIndicesList); // todo список выбранных моделей
 
             for (ModelOnScene modelOnScene : selectedModelsOnSceneList) { // todo для каждой модели из списка выбранных моделей
-                // todo  !!! МАСШТАБИРОВАНИЕ МОДЕЛИ ВДОЛЬ ОСИ Y (УВЕЛИЧЕНИЕ) !!!
-                // todo  !!! ЖЕЛАТЕЛЬНО ПЕРЕДАВАТЬ НЕБОЛЬШОЕ ЗНАЧЕНИЕ МАСШТАБИРОВАНИЯ (ПЕРЕМЕННАЯ TRANSITION ИЗ КЛАССА SCENE НАПРИМЕР) !!!
+
             }
 
             if (selectedModelsIndicesList.size() == 1) { // todo если была выбрана одна модель
@@ -827,10 +727,7 @@ public class GuiController {
 
     @FXML
     private void scaleModelDown() { // уменьшение модели вдоль оси Y
-        // старые сообщения моему коллеге (он так и не сделал масштабирование)
-        // todo !!! ВАЖНО !!!
-        // todo я уже привязал эту функцию к клавишам и форме в интерфейсе
-        // todo поэтому от тебя требуется только следовать моим инструкциям ниже
+
 
         List<Integer> selectedModelsIndicesList = ModelsListView.getSelectionModel().getSelectedIndices(); // todo список индексов выбранных моделей
 
